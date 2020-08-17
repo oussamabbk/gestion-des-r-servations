@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { ReservationComponent } from './reservation/reservation.component';
+import {DataService} from "./data.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
