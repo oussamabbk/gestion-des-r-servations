@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {DataService} from "../data.service";
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
    burger(){
     var burger = document.getElementById('burger');
@@ -26,6 +26,7 @@ export class ReservationComponent implements OnInit {
     quit.style.display = 'none';
   }
   ngOnInit(): void {
+    console.log(this.dataService.getReservation());
   }
 
 }

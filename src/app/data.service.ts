@@ -13,4 +13,7 @@ export class DataService {
 
     return this._http.get("http://localhost:3000/user/authentification/"+email+"/"+password,{responseType: 'text'})
   }
+  getReservation(){
+    return this._http.get("http://localhost:3000/reservation",{responseType: 'text'})
+  }
 }
