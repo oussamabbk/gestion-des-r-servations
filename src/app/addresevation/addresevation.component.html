@@ -1,0 +1,23 @@
+<div class="form-style-2">
+  <div class="form-style-2-heading">Provide your information</div>
+  <form action="" method="post">
+
+    <label ><span>debut <span class="required">*</span></span><input type="date" class="input-field" name="field2" value="" #debut /></label>
+
+    <label ><span>debut <span class="required">*</span></span><input type="date" class="input-field" name="field2" value="" #fin /></label>
+
+
+
+  </form>
+  <input
+    type="submit"
+    value="VALIDER"
+    (click)="
+              addnewreservation(
+                  debut.value,
+                  fin.value
+
+                )
+              "
+  />
+</div>

@@ -13,12 +13,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { ReservationComponent } from './reservation/reservation.component';
 import {DataService} from "./data.service";
+import { AddresevationComponent } from './addresevation/addresevation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponentComponent,
     ReservationComponent,
+    AddresevationComponent,
 
   ],
   imports: [

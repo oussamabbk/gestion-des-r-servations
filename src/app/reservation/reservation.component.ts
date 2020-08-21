@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../data.service";
+import {ressource} from "../ressource.model";
+import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent implements OnInit {
-
-  constructor(private dataService:DataService) { }
+  reservation$:ressource[];
+  constructor(private dataService:DataService, private _router: Router) { }
 
    burger(){
     var burger = document.getElementById('burger');
@@ -25,8 +28,13 @@ export class ReservationComponent implements OnInit {
     links.style.display = 'none';
     quit.style.display = 'none';
   }
-  ngOnInit(): void {
+  ngOnInit() {
     console.log(this.dataService.getReservation());
+    return this.dataService.getReservation().subscribe(data=> this.reservation$=data);
   }
-
+  gotoaddreservation(id){
+    localStorage.setItem('ressource',""+id);
+    console.log(id);
+    this._router.navigate(['/addreservation']);
+  }
 }

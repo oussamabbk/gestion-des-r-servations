@@ -58,40 +58,32 @@
 <div class="container">
   <h2>Striped Rows</h2>
   <p>The .table-striped class adds zebra-stripes to a table:</p>
-  <table class="table table-striped">
+
+  <table class="table table-striped" *ngFor='let res of reservation$'>
     <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>button</th>
+
+      <th>Model</th>
+      <th>Refernces</th>
+      <th>platform</th>
+      <th>osversion</th>
+      <th>reserve</th>
+      <th>reserved</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>john@example.com</td>
-      <td><i class="fas fa-pencil"></i></td>
+      <td>{{res.Model}}</td>
+      <td>{{res.Refernces}}</td>
+      <td>{{res.platform}}</td>
+      <td>{{res.osversion}}</td>
+      <td>{{res.reserve}}</td>
+      <td><a (click)="gotoaddreservation(res.id)"> reserved</a></td>
+
     </tr>
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@example.com</td>
-      <td><i class="fas fa-pencil"></i></td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@example.com</td>
-      <td><i class="fas fa-pencil"></i></td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@example.com</td>
-      <td><i class="fas fa-pencil"></i></td>
-    </tr>
+
+
+
     </tbody>
   </table>
 </div>

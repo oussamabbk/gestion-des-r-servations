@@ -22,7 +22,16 @@ export class AuthenticationComponentComponent implements OnInit {
       data=>{
         console.log(data);
         if (data=="login succes"){
+          this.dataService.findID(e,p).toPromise().then(
+            data=>{
+              localStorage.setItem('userID',""+data);
+            }
+          );
+
+
           this._router.navigate(['/reservation']);
+
+
 
         }if(data=="no fucked login"){
             this.s="password or email is not found";
