@@ -14,6 +14,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { ReservationComponent } from './reservation/reservation.component';
 import {DataService} from "./data.service";
 import { AddresevationComponent } from './addresevation/addresevation.component';
+import { HistoriqueComponent } from './historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AddresevationComponent } from './addresevation/addresevation.component'
     AuthenticationComponentComponent,
     ReservationComponent,
     AddresevationComponent,
+    HistoriqueComponent,
 
   ],
   imports: [

@@ -25,5 +25,14 @@ export class DataService {
   addReservation(Reservation:resevation){
     return this._http.post<any>("http://localhost:3000/reserv",Reservation);
   }
+  getReservationornot(datedebut,datefin,userId,ressourceID){
+    return this._http.get("http://localhost:3000/reserv/reservedornot/"+datedebut+"/"+datefin+"/"+userId+"/"+ressourceID,{responseType: 'text'})
+  }
+  gethistorique(userID){
+    return this._http.get<resevation[]>("http://localhost:3000/reserv/historique/"+userID);
+  }
+  getressourceswithID(ressourceID){
+    return this._http.get<ressource[]>("http://localhost:3000/ressources/singleressource/"+ressourceID);
+  }
 
 }

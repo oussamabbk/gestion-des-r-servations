@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../data.service";
-import {ressource} from "../ressource.model";
 import {Router} from "@angular/router";
 
-@Component({
-  selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.css']
-})
-export class ReservationComponent implements OnInit {
-  reservation$:ressource[];
-  constructor(private dataService:DataService, private _router: Router) { }
+import {resevation} from "../reservation.model";
 
-   burger(){
+
+@Component({
+  selector: 'app-historique',
+  templateUrl: './historique.component.html',
+  styleUrls: ['./historique.component.css']
+})
+export class HistoriqueComponent implements OnInit {
+  reservation$:resevation[];
+  nameofressources="";
+  constructor(private dataService:DataService, private _router: Router) { }
+  burger(){
     var burger = document.getElementById('burger');
     var links = document.getElementById('links');
     var quit = document.getElementById('quit');
@@ -20,7 +22,7 @@ export class ReservationComponent implements OnInit {
     links.style.display = 'flex';
     quit.style.display = 'inline';
   }
-   quit(){
+  quit(){
     var burger = document.getElementById('burger');
     var links = document.getElementById('links');
     var quit = document.getElementById('quit');
@@ -30,14 +32,14 @@ export class ReservationComponent implements OnInit {
   }
   ngOnInit() {
     console.log(this.dataService.getReservation());
-    return this.dataService.getReservation().subscribe(data=> this.reservation$=data);
+    return this.dataService.gethistorique(localStorage.getItem('userID')).subscribe(data=> this.reservation$=data);
+
   }
-  gotoaddreservation(id){
-    localStorage.setItem('ressource',""+id);
-    console.log(id);
-    this._router.navigate(['/addreservation']);
+  getressourcewithId(ressourceID){
+    return this.dataService.getressourceswithID(ressourceID).subscribe(data=>{
+      console.log(data);
+    });
+
   }
-  gotomyhistorique(){
-    this._router.navigate(['/historique']);
-  }
+
 }

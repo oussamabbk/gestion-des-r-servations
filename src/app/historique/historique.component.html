@@ -59,26 +59,24 @@
   <h2>Striped Rows</h2>
   <p>The .table-striped class adds zebra-stripes to a table:</p>
 
-  <table class="table table-striped" *ngFor='let res of reservation$'>
+  <table class="table table-striped" >
     <thead>
     <tr>
 
-      <th>Model</th>
-      <th>Refernces</th>
-      <th>platform</th>
-      <th>osversion</th>
-      <th>reserve</th>
-      <th>reserved</th>
+      <th>Datedebut</th>
+      <th>Datedefin</th>
+      <th>ressourceId</th>
+
+
     </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor='let res of reservation$'>
     <tr>
-      <td>{{res.Model}}</td>
-      <td>{{res.Refernces}}</td>
-      <td>{{res.platform}}</td>
-      <td>{{res.osversion}}</td>
-      <td>{{res.reserve}}</td>
-      <td><a (click)="gotoaddreservation(res.id)"> reserved</a></td>
+      <td>{{res.Datedebut}}</td>
+      <td>{{res.Datedefin}}</td>
+      <td>{{res.ressourceId}}</td>
+
+
 
     </tr>
 
@@ -90,10 +88,10 @@
 
 <body>
 <i  type="submit" id="burger" class="material-icons"  (click)="burger()" >menu
- </i>
+</i>
 <i  type="submit" id="quit" class="material-icons" (click)="quit()" >clear</i>
 <div id="links">
-  <a (click)="gotomyhistorique()">historique</a>
+  <a href="">Home</a>
   <a href="">About</a>
   <a href="">Contact</a>
 </div>
