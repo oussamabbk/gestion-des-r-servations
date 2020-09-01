@@ -3,6 +3,7 @@ import {DataService} from "../data.service";
 import {Router} from "@angular/router";
 
 import {resevation} from "../reservation.model";
+import {ressource} from "../ressource.model";
 
 
 @Component({
@@ -12,7 +13,8 @@ import {resevation} from "../reservation.model";
 })
 export class HistoriqueComponent implements OnInit {
   reservation$:resevation[];
-  nameofressources="";
+  historique$:ressource[];
+
   constructor(private dataService:DataService, private _router: Router) { }
   burger(){
     var burger = document.getElementById('burger');
@@ -37,7 +39,7 @@ export class HistoriqueComponent implements OnInit {
   }
   getressourcewithId(ressourceID){
     return this.dataService.getressourceswithID(ressourceID).subscribe(data=>{
-      console.log(data);
+      this.historique$=data;
     });
 
   }

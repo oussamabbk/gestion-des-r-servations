@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {User} from "./user.model";
 import {ressource} from "./ressource.model";
 import {resevation} from "./reservation.model";
+import {Subscription} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +34,10 @@ export class DataService {
   }
   getressourceswithID(ressourceID){
     return this._http.get<ressource[]>("http://localhost:3000/ressources/singleressource/"+ressourceID);
+  }
+  public notification(sub: PushSubscription){
+    return this._http.post<any>("http://localhost:3000/reserv",sub);
+
   }
 
 }
