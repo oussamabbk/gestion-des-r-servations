@@ -50,11 +50,14 @@ export class HistoriqueComponent implements OnInit {
   goToUpdate(Id){
     console.log(Id);
     localStorage.setItem('reservationId',""+Id);
-    //this._router.navigate(['/reservation']);
+    this._router.navigate(['/update']);
 
   }
   delete(Id){
-    return this.dataService.Deletereservation(Id);
+    return this.dataService.Deletereservation(Id).subscribe(data=>{
+      console.log(data)
+      location.reload();
+    });
   }
 
 }

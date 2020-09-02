@@ -14,34 +14,14 @@ export class UpdatereservationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  ifreservedornot(datedebut1,datefin1):any{
-    this.dataService.getReservationornot(datedebut1,datefin1,localStorage.getItem('ressource'),localStorage.getItem('userID')).toPromise().then(data=>{
 
-        return data;
-
-
-
-      }
-
-    )
-
-
-
-
-
-
-
-
-  }
   updatereservation(datedebut1,datefin1){
 
-    this.ifreservedornot(datedebut1,datefin1).subscribe(data=>{
+    this.dataService.getReservationornot(datedebut1,datefin1,localStorage.getItem('ressource'),localStorage.getItem('userID')).toPromise().then(data=>{
       console.log((data));
       if(data === 'isnotereserved'){
-
-      }else{
         const res:resevation={
-          id:localStorage.getItem('reservationId'),
+          id:null,
 
           Datedebut:datedebut1,
           Datedefin:datefin1,
@@ -55,7 +35,7 @@ export class UpdatereservationComponent implements OnInit {
         if(datedebut1<datefin1){
 
           this.dataService.updateresevation(res).subscribe(data=>{
-            console.log('reservation updated');
+            console.log('reservation add');
             console.log(data);
           },error=>{
             console.log('error');
@@ -64,6 +44,8 @@ export class UpdatereservationComponent implements OnInit {
         }else{
           console.log("you can't")
         }
+      }else{
+
       }
     },error=>{
       console.log(error);
@@ -74,5 +56,6 @@ export class UpdatereservationComponent implements OnInit {
 
 
   }
+
 
 }

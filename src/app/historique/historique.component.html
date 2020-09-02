@@ -74,13 +74,13 @@
     </thead>
     <tbody *ngFor='let res of reservation$'>
     <tr>
-      <td>{{res.id}}</td>
+      <td>{{res._id}}</td>
       <td>{{res.Datedefin}}</td>
 
       <td>{{res.ressourceId}}</td>
-      <td (click)="goToUpdate(res.id)"><i class="fas fa-wrench">update</i>
+      <td (click)="goToUpdate(res._id)"><i class="fas fa-wrench">update</i>
        </td>
-      <td (click)="delete(res.id)">DElete</td>
+      <td (click)="delete(res._id)">DElete</td>
 
 
 

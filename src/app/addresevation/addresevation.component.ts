@@ -19,7 +19,7 @@ export class AddresevationComponent implements OnInit {
   }
   ifreservedornot(datedebut1,datefin1):any{
     this.dataService.getReservationornot(datedebut1,datefin1,localStorage.getItem('ressource'),localStorage.getItem('userID')).toPromise().then(data=>{
-
+        console.log(data);
         return data;
 
 
@@ -38,11 +38,9 @@ export class AddresevationComponent implements OnInit {
   }
   addnewreservation(datedebut1,datefin1){
 
-    this.ifreservedornot(datedebut1,datefin1).subscribe(data=>{
+    this.dataService.getReservationornot(datedebut1,datefin1,localStorage.getItem('ressource'),localStorage.getItem('userID')).toPromise().then(data=>{
       console.log((data));
       if(data === 'isnotereserved'){
-
-      }else{
         const res:resevation={
           id:null,
 
@@ -67,6 +65,8 @@ export class AddresevationComponent implements OnInit {
         }else{
           console.log("you can't")
         }
+      }else{
+
       }
     },error=>{
       console.log(error);
