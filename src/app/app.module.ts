@@ -15,6 +15,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import {DataService} from "./data.service";
 import { AddresevationComponent } from './addresevation/addresevation.component';
 import { HistoriqueComponent } from './historique/historique.component';
+import { UpdatereservationComponent } from './updatereservation/updatereservation.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HistoriqueComponent } from './historique/historique.component';
     ReservationComponent,
     AddresevationComponent,
     HistoriqueComponent,
+    UpdatereservationComponent,
 
   ],
   imports: [

@@ -6,7 +6,7 @@ export class resevation{
   userId: string;
 
   constructor(resevationResponce:any) {
-
+    this.id=resevationResponce._id;
     this.Datedebut=resevationResponce.Datedebut;
     this.Datedefin=resevationResponce.Datedefin;
     this.ressourceId=resevationResponce.ressourceId;

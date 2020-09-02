@@ -4,6 +4,7 @@ import  {AuthenticationComponentComponent} from './authentication-component/auth
 import {ReservationComponent} from "./reservation/reservation.component";
 import {AddresevationComponent} from "./addresevation/addresevation.component";
 import {HistoriqueComponent} from "./historique/historique.component";
+import {UpdatereservationComponent} from "./updatereservation/updatereservation.component";
 const routes: Routes = [{
   path:"login",
   component:AuthenticationComponentComponent
@@ -18,6 +19,10 @@ const routes: Routes = [{
   , {
     path:"historique",
     component:HistoriqueComponent
+  },
+  {
+    path:"update",
+    component:UpdatereservationComponent
   }
 ];
 

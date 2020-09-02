@@ -34,13 +34,23 @@ export class HistoriqueComponent implements OnInit {
   }
   ngOnInit() {
     console.log(this.dataService.getReservation());
-    return this.dataService.gethistorique(localStorage.getItem('userID')).subscribe(data=> this.reservation$=data);
+    return this.dataService.gethistorique(localStorage.getItem('userID')).subscribe(data=> {
+      this.reservation$=data
+
+      console.log(data);
+    });
 
   }
   getressourcewithId(ressourceID){
     return this.dataService.getressourceswithID(ressourceID).subscribe(data=>{
       this.historique$=data;
     });
+
+  }
+  goToUpdate(Id){
+    console.log(Id);
+    localStorage.setItem('reservationId',""+Id);
+    //this._router.navigate(['/reservation']);
 
   }
 

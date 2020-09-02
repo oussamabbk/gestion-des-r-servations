@@ -66,16 +66,19 @@
       <th>Datedebut</th>
       <th>Datedefin</th>
       <th>ressourceId</th>
+      <th>update </th>
 
 
     </tr>
     </thead>
     <tbody *ngFor='let res of reservation$'>
     <tr>
-      <td>{{res.Datedebut}}</td>
+      <td>{{res.id}}</td>
       <td>{{res.Datedefin}}</td>
 
       <td>{{res.ressourceId}}</td>
+      <td (click)="goToUpdate(res.id)"><i class="fas fa-wrench">update</i>
+       </td>
 
 
 
