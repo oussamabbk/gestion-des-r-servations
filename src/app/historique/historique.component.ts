@@ -53,5 +53,8 @@ export class HistoriqueComponent implements OnInit {
     //this._router.navigate(['/reservation']);
 
   }
+  delete(Id){
+    return this.dataService.Deletereservation(Id);
+  }
 
 }

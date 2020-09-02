@@ -3,12 +3,14 @@ import { ApiService } from  './api.service';
 import { Item } from  './api.service';
 import  {SwUpdate} from "@angular/service-worker";
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export  class  AppComponent  implements  OnInit{
+
   title  =  'pwademo';
   items:  Array<Item>;
   constructor(private  apiService:  ApiService){

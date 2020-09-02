@@ -17,6 +17,7 @@ import { AddresevationComponent } from './addresevation/addresevation.component'
 import { HistoriqueComponent } from './historique/historique.component';
 import { UpdatereservationComponent } from './updatereservation/updatereservation.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { UpdatereservationComponent } from './updatereservation/updatereservatio
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

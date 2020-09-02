@@ -44,5 +44,10 @@ export class DataService {
     return this._http.put<any>("http://localhost:3000/reserv/update",Reservation);
 
   }
+  Deletereservation(Id:string){
+
+    return this._http.delete<any>("http://localhost:3000/reserv/"+Id);
+
+  }
 
 }
